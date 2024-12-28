@@ -71,7 +71,6 @@ let config = {
     "@quenti/lib",
     "@quenti/components",
     "@quenti/branding",
-    "@quenti/payments",
     "@quenti/enterprise",
     "@quenti/prisma",
     "@quenti/drizzle",

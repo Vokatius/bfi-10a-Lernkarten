@@ -153,20 +153,6 @@ const OrganizationTabList = () => {
       ),
       slug: "/settings",
     },
-    {
-      content: (
-        <Box display="flex" gap="2" alignItems="center" key="Billing">
-          Billing
-          {isLoaded && !org.published && (
-            <Box display="inline-flex" color="orange.400" w="4" h="4">
-              <IconAlertCircleFilled size={16} />
-            </Box>
-          )}
-        </Box>
-      ),
-      slug: "/billing",
-      admin: true,
-    },
   ];
 
   return (
@@ -202,9 +188,8 @@ const OrganizationTabList = () => {
           opacity={hasHover ? 1 : 0}
         />
         {tabContent.map(
-          ({ content, slug, admin }, i) =>
-            (!admin ||
-              index == i ||
+          ({ content, slug}, i) =>
+            (index == i ||
               me?.role == "Admin" ||
               me?.role == "Owner") && (
               <SkeletonTab

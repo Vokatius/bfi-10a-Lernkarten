@@ -47,7 +47,6 @@ import {
 } from "@tabler/icons-react";
 
 import { menuEventChannel } from "../events/menu";
-import { useDevActions } from "../hooks/use-dev-actions";
 import { useIsTeacher } from "../hooks/use-is-teacher";
 import { useMe } from "../hooks/use-me";
 import { plural } from "../utils/string";
@@ -89,7 +88,6 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
   const router = useRouter();
   const session = useSession();
   const { data: me } = useMe();
-  const devActions = useDevActions();
   const isTeacher = useIsTeacher();
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -321,8 +319,6 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         label: `In den ${colorMode == "dark" ? "hellen" : "dunklen"} Modus wechseln`,
         action: toggleColorMode,
       });
-
-      if (env.NEXT_PUBLIC_DEPLOYMENT === undefined) total.push(...devActions);
 
       setOptions(total);
     },

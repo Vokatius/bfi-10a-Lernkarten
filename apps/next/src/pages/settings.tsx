@@ -24,7 +24,6 @@ import { WithFooter } from "../components/with-footer";
 import { useMe } from "../hooks/use-me";
 import { getLayout } from "../layouts/main-layout";
 import { AccountInfo } from "../modules/settings/account-info";
-import { AccountType } from "../modules/settings/account-type";
 import { DangerZone } from "../modules/settings/danger-zone";
 import { ProfileInfo } from "../modules/settings/profile-info";
 import { Theme } from "../modules/settings/theme";
@@ -69,10 +68,6 @@ const SettingsInner = () => {
             <Stack spacing={8}>
               <AccountInfo />
               <Divider borderColor={divider} />
-              <UnboundOnly strict>
-                <AccountType />
-                <Divider borderColor={divider} />
-              </UnboundOnly>
               <ProfileInfo />
               <Divider borderColor={divider} />
               <Theme />

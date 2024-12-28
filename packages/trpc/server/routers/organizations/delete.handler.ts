@@ -1,6 +1,4 @@
 import { inngest } from "@quenti/inngest";
-import { cancelOrganizationSubscription } from "@quenti/payments";
-
 import { TRPCError } from "@trpc/server";
 
 import { isOrganizationOwner } from "../../lib/queries/organizations";
@@ -68,8 +66,6 @@ export const deleteHandler = async ({ ctx, input }: DeleteOptions) => {
       },
     });
   } else {
-    await cancelOrganizationSubscription(input.orgId);
-
     await ctx.prisma.organization.delete({
       where: {
         id: input.orgId,

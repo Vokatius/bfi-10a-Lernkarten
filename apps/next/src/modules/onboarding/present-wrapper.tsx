@@ -33,20 +33,14 @@ const computeMap = (
     "",
     "/theme",
     "/username",
-    "/account-type",
     "/command-menu",
     "/invite",
-    "/subscribe",
     "/done",
   ];
   const remove = (index: string) => base.splice(base.indexOf(index), 1);
 
   if (isMobile) remove("/command-menu");
   if (!invite) remove("/invite");
-  if (organizationBound) {
-    if (!orgMembership) remove("/subscribe");
-    remove("/account-type");
-  }
 
   return base;
 };

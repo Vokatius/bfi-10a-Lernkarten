@@ -41,7 +41,6 @@
     "@quenti/inngest": "workspace:*",
     "@quenti/interfaces": "workspace:*",
     "@quenti/lib": "workspace:*",
-    "@quenti/payments": "workspace:*",
     "@quenti/prisma": "workspace:*",
     "@quenti/trpc": "workspace:*",
     "@quenti/types": "workspace:*",
