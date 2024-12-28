@@ -1,4 +1,3 @@
-import { IS_PAYMENT_ENABLED } from "@quenti/lib/constants/payments";
 import { APP_URL } from "@quenti/lib/constants/url";
 import { TRPCError } from "@trpc/server";
 
