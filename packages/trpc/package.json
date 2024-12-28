@@ -14,7 +14,6 @@
     "@quenti/inngest": "workspace:*",
     "@quenti/interfaces": "workspace:*",
     "@quenti/lib": "workspace:*",
-    "@quenti/payments": "workspace:*",
     "@quenti/prisma": "workspace:*",
     "@quenti/types": "workspace:*",
     "@tiptap/html": "^2.1.12",
