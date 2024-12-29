@@ -7,6 +7,7 @@ import { TRPCError } from "@trpc/server";
 import { hasFeature } from "../../common/feature";
 import type { NonNullableUserContext } from "../../lib/types";
 import type { TCreateSchema } from "./create.schema";
+import { hasCohere } from "@quenti/cortex/lib/cohere";
 
 type CreateOptions = {
   ctx: NonNullableUserContext;
@@ -41,13 +42,15 @@ export const createHandler = async ({ ctx, input }: CreateOptions) => {
     },
   });
 
-  await inngest.send({
-    name: "cortex/classify-class",
-    data: {
-      classId: created.id,
-      name: created.name,
-    },
-  });
+  if (hasCohere) {
+    await inngest.send({
+      name: "cortex/classify-class",
+      data: {
+        classId: created.id,
+        name: created.name,
+      },
+    });
+  }
 
   return created;
 };
